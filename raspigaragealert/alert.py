@@ -1,12 +1,14 @@
-import RPi.GPIO as GPIO
+from raspigaragealert import garage_door as door
 
 
 def main():
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    print("Printing a 1 if garage is closed and a 0 if open")
-    while True:
-        print(GPIO.input(16))
+    my_door = door.door(16)
+    loop = True
+    while loop:
+        door_state_changed, state_in_words = my_door.has_state_changed()
+        if door_state_changed:
+            print(f"Garage door is now {state_in_words}.")
+        #loop = False
 
 
 if __name__ == "__main__":
