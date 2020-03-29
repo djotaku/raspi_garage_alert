@@ -12,6 +12,7 @@ class Publisher():
     def __init__(self, channel, server):
         self.channel = channel
         self.server = server
+        self.client_id = "garage_pi"
     
 
     def publish(self, message):
@@ -20,7 +21,7 @@ class Publisher():
         :param message: the message to publish.
         """
 
-        publish.single(self.channel, message, hostname=self.server)
+        publish.single(self.channel, message, hostname=self.server, client_id=self.client_id)
         
 
 
