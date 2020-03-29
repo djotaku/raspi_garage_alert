@@ -6,3 +6,7 @@ I was inspired by the work done by this guy: https://github.com/rllynch/pi_garag
 The exact magnetic sensor he used was unavailable, so I bought a similar model, SM-226L-3Q. (https://www.amazon.com/gp/product/B005H3GCW0).
 
 On that model, if you connect it with the red wire, it goes high (1) if the garage is closed and low (0) if open.
+
+As of v0.3.0 it now works with MQTT and is useful for using with Home Assistant:
+
+![mqtt animated gif](https://raw.githubusercontent.com/djotaku/raspi_garage_alert/master/screenshots/mqtt.gif)
