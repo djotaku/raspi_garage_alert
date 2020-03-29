@@ -1,7 +1,9 @@
 entrypoints==0.3
 flake8==3.7.9
 mccabe==0.6.1
+paho-mqtt==1.5.0
 pkg-resources==0.0.0
 pycodestyle==2.5.0
 pyflakes==2.1.1
+-e git+git@github.com:djotaku/raspi_garage_alert.git@2be96dbdf7dda0f0676b5fc51c38d52b42c90b44#egg=raspigaragealert
 RPi.GPIO==0.7.0
