@@ -11,7 +11,7 @@ def main():
         if door_state_changed:
             print(f"Garage door is now {state_in_words}.")
             mqtt_service.publish(state_in_words)
-        #loop = False
+        # loop = False
 
 
 if __name__ == "__main__":
