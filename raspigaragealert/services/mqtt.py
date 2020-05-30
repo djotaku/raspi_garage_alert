@@ -20,4 +20,7 @@ class Publisher():
         :param message: the message to publish.
         """
 
-        publish.single(self.channel, message, hostname=self.server, client_id=self.client_id)
+        try:
+            publish.single(self.channel, message, hostname=self.server, client_id=self.client_id)
+        except socket.gaierror:
+            print("Server DNS issue.")
