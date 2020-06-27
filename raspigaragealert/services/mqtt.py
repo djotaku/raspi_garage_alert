@@ -14,7 +14,7 @@ class Publisher():
         self.server = server
         self.client_id = "garage_pi"
 
-    def publish(self, message):
+    def publish(self, message) -> bool:
         """Publish message to MQTT server.
 
         :param message: the message to publish.
@@ -22,5 +22,7 @@ class Publisher():
 
         try:
             publish.single(self.channel, message, hostname=self.server, client_id=self.client_id)
+            return True
         except:
             print("Server DNS issue.")
+            return False
