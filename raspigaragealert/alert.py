@@ -11,6 +11,7 @@ def main():
     mqtt_service = mqtt.Publisher("garage/door1", "tanukimario.mushroomkingdom")  # testing values - will need to make user configurable
     my_matrix_bot = matrix.MatrixBot(xdg)
     loop = True
+    success = False
     while loop:
         door_state_changed, state_in_words = my_door.has_state_changed()
         if door_state_changed:
