@@ -10,3 +10,24 @@ On that model, if you connect it with the red wire, it goes high (1) if the gara
 As of v0.3.0 it now works with MQTT and is useful for using with Home Assistant:
 
 ![mqtt animated gif](https://raw.githubusercontent.com/djotaku/raspi_garage_alert/master/screenshots/mqtt.gif)
+
+You should have the following config files in $HOME/.config/raspigaragealert/: mqtt.conf and matrix.conf
+
+*mqtt.conf*
+```json
+{
+"channel":"something/somethingelse",
+"server":"mqtt server url or ip address",
+"client_id":"client_if for raspberry pi"
+}
+```
+
+*matrix.conf*
+```json
+{
+"server":"url or IP address of server",
+"room":"room ID will look like !randomletters:server.com"
+"username":"name of user for posting",
+"password":"password for that user"
+}
+```
