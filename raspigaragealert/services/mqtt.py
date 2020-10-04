@@ -1,5 +1,6 @@
 """Publish state via MQTT."""
 
+import json
 import paho.mqtt.publish as publish
 
 
@@ -12,6 +13,7 @@ class Publisher():
     def __init__(self, xdg):
         with open(f'{xdg.XDG_CONFIG_HOME}/mqtt.conf') as file:
             config = json.load(file)
+            print("mqtt config laoded")
         self.channel = config.get("channel")
         self.server = config.get("server")
         self.client_id = config.get("client_id")

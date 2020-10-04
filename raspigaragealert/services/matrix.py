@@ -11,7 +11,7 @@ class MatrixBot:
         try:
             with open(f'{self.xdg.XDG_CONFIG_HOME}/matrix.conf') as file:
                 self.config = json.load(file)
-                print("Config loaded.")
+                print("Matrix Config loaded.")
                 file.close()
         except FileNotFoundError:
             print(f"Settings not found at {self.xdg.XDG_CONFIG_HOME}")
