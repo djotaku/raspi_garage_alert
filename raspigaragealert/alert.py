@@ -7,7 +7,7 @@ from raspigaragealert.services import matrix
 
 def main():
     xdg = xdgenvpy.XDGPedanticPackage('raspigaragealert')
-    my_door = door.door(16)
+    my_door = door.door(7)
     mqtt_service = mqtt.Publisher("garage/door1", "tanukimario.mushroomkingdom")  # testing values - will need to make user configurable
     my_matrix_bot = matrix.MatrixBot(xdg)
     loop = True
