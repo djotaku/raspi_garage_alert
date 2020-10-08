@@ -25,7 +25,7 @@ class Publisher():
         """
 
         try:
-            publish.single(self.channel, message, hostname=self.server, client_id=self.client_id)
+            publish.single(self.channel, message, retain=True, hostname=self.server, client_id=self.client_id)
             return True
         except:
             print("Server DNS issue.")
