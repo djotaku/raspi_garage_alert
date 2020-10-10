@@ -15,6 +15,7 @@ Right now my code expects you to both use MQTT and Matrix. I will eventually add
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
    hardware
    configuration
 
