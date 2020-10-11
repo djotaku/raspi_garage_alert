@@ -1,7 +1,7 @@
 """Class representing a Garage Door alarm."""
 
 import RPi.GPIO as GPIO
-
+import time
 
 class door():
     """Represents a SM-226L-3Q connected via red and black wires to a specified pin.
@@ -28,9 +28,12 @@ class door():
         """
         current_state = self._check_pin()
         # print(f"For debugging: \nCurrent state: {current_state}. \nself.state: {self.state}")
-        if current_state != self.state:
-            self.state = current_state
-            state_in_words = self.state_definition[self.state]
-            return True, state_in_words
+        if current_state !=  self.state:
+            time.sleep(10); #sleep for 10 seconds
+            current_state = self._check_pin();
+            if current_state != self.state:
+                self.state = current_state
+                state_in_words = self.state_definition[self.state]
+                return True, state_in_words
         else:
             return False, "unchanged"
