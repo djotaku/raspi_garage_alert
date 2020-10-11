@@ -1,9 +1,13 @@
-Currently incredibly alpha code, but I wanted to make sure I could publish starting early.
+.. image:: https://readthedocs.org/projects/raspi-garage-alert/badge/?version=latest
+
+:target: https://raspi-garage-alert.readthedocs.io/en/latest/?badge=latest
+
+:alt: Documentation Status
+
+Currently beta code.
 
 Generate an alert when your garage door is left open
 
 I was inspired by the work done by this guy: https://github.com/rllynch/pi_garage_alert, but I wanted to make pretty drastic changes and I thought it would be rude to so radically change someone's code in a fork.
 
-The exact magnetic sensor he used was unavailable, so I bought a similar model, SM-226L-3Q. (https://www.amazon.com/gp/product/B005H3GCW0).
-
-On that model, if you connect it with the red wire, it goes high (1) if the garage is closed and low (0) if open.
+Documentation at: https://raspi-garage-alert.readthedocs.io/en/latest/index.html
