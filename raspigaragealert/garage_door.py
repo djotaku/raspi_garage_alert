@@ -35,7 +35,7 @@ class door():
                 self.state = current_state
                 state_in_words = self.state_definition[self.state]
                 return True, state_in_words
-            else
+            else:
                 return False, self.state_definition[self.state]
         else:
             return False, self.state_definition[self.state]
