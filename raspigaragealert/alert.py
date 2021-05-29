@@ -26,7 +26,7 @@ def main():
         if door_state_changed:
             print(f"Garage door is now {state_in_words}.")
             success = mqtt_service.publish(state_in_words)
-            if check_matrix(my_matrix_box.config.get('server')):
+            if check_matrix(my_matrix_bot.config.get('server')):
                 my_matrix_bot.main(f"Garage door is now {state_in_words}.")
         if not success:
             success = mqtt_service.publish(state_in_words)
