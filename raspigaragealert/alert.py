@@ -6,8 +6,8 @@ from raspigaragealert.services import mqtt
 from raspigaragealert.services import matrix
 
 def check_matrix(server):
-    host = socket.gethostbyname(server)
     try:
+        host = socket.gethostbyname(server)
         connection = socket.create_connection((host, 80), 2)
         return True
     except:
