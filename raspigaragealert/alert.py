@@ -26,8 +26,7 @@ def main():
         if door_state_changed:
             print(f"Garage door is now {state_in_words}.")
             success = mqtt_service.publish(state_in_words)
-            if check_matrix("http://www.google.com"):
-                my_matrix_bot.main(f"Garage door is now {state_in_words}.")
+            my_matrix_bot.main(f"Garage door is now {state_in_words}.")
         if not success:
             success = mqtt_service.publish(state_in_words)
         # loop = False
