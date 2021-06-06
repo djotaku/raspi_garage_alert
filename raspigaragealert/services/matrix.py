@@ -2,8 +2,11 @@
 
 import asyncio
 import json
+import logging
 from nio import AsyncClient
 
+logging.basicConfig(level=logging.INFO, format='%(levelname)s- Matrix -  %(asctime)s - %(message)s')
+        
 class MatrixBot:
     """A bot to send alerts about the Garage Door to Matrix"""
     def __init__(self, xdg):
@@ -11,7 +14,7 @@ class MatrixBot:
         try:
             with open(f'{self.xdg.XDG_CONFIG_HOME}/matrix.conf') as file:
                 self.config = json.load(file)
-                print("Matrix Config loaded.")
+                logging.debug("Matrix Config loaded.")
                 file.close()
         except FileNotFoundError:
             print(f"Settings not found at {self.xdg.XDG_CONFIG_HOME}")
@@ -19,12 +22,12 @@ class MatrixBot:
     async def send_message(self, message:str):
         client = AsyncClient(self.config.get('server'), self.config.get('username'))
         response = await client.login(password=self.config.get("password"))
-        print(f"Login response: {response}")
-        print(f"Room would be: {self.config.get('room')}")
+        logging.debug(f"Login response: {response}")
+        logging.debug(f"Room would be: {self.config.get('room')}")
         msg_response = await client.room_send(room_id=self.config.get('room'), message_type="m.room.message",
                 content={"msgtype": "m.text",
                     "body": message})
-        print(f"Message Response: {msg_response}")
+        logging.debug(f"Message Response: {msg_response}")
         await client.close()
 
     def main(self, message):
