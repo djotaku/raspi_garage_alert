@@ -6,7 +6,7 @@ from raspigaragealert import garage_door as door
 from raspigaragealert.services import mqtt
 from raspigaragealert.services import matrix
 
-logging.basicConfig(level=logging.INFO, format='%(levelname)s - Main Loop - $(asctime)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(levelname)s - Main Loop - %(asctime)s - %(message)s')
 
 
 def check_matrix(server):
