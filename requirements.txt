@@ -14,7 +14,7 @@ idna==2.9
 importlib-metadata==1.6.0
 jsonschema==3.2.0
 Logbook==1.5.3
-matrix-nio==0.10.0
+matrix-nio==0.20.0
 mccabe==0.6.1
 multidict==4.7.5
 paho-mqtt==1.5.0
