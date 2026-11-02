@@ -1,4 +1,4 @@
 matrix-nio==0.10.0
 paho-mqtt==1.5.0
-RPi.GPIO==0.7.0
+RPi.GPIO
 xdgenvpy==2.3.0
